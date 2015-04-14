@@ -1,0 +1,52 @@
+2015-04-12T20:08:35+02:00 CRIT (2): exception 'Zend\ServiceManager\Exception\ServiceNotFoundException' with message 'Zend\ServiceManager\ServiceManager::get was unable to fetch or create an instance for CmsIr\System\Model\MenuTable' in I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\ServiceManager\ServiceManager.php:550
+Stack trace:
+#0 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(238): Zend\ServiceManager\ServiceManager->get('CmsIr\\System\\Mo...')
+#1 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(219): CmsIr\Dictionary\Controller\DictionaryController->getMenuTable()
+#2 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(69): CmsIr\Dictionary\Controller\DictionaryController->createPostCategoryMenuItem('Idzik')
+#3 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): CmsIr\Dictionary\Controller\DictionaryController->createAction()
+#4 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#9 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 I:\htdocs\szyk\public\index.php(17): Zend\Mvc\Application->run()
+#14 {main}
+2015-04-12T20:19:44+02:00 CRIT (2): exception 'Zend\Db\TableGateway\Exception\RuntimeException' with message 'This table does not have an Adapter setup' in I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php:101
+Stack trace:
+#0 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(254): Zend\Db\TableGateway\AbstractTableGateway->initialize()
+#1 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\MenuTable.php(51): Zend\Db\TableGateway\AbstractTableGateway->insert(Array)
+#2 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(221): CmsIr\System\Model\MenuTable->save(Array)
+#3 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(70): CmsIr\Dictionary\Controller\DictionaryController->createPostCategoryMenuItem('asd')
+#4 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): CmsIr\Dictionary\Controller\DictionaryController->createAction()
+#5 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 I:\htdocs\szyk\public\index.php(17): Zend\Mvc\Application->run()
+#15 {main}
+2015-04-12T20:58:18+02:00 CRIT (2): exception 'Zend\Db\TableGateway\Exception\InvalidArgumentException' with message 'Invalid magic property access in Zend\Db\TableGateway\AbstractTableGateway::__get()' in I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php:445
+Stack trace:
+#0 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\MenuTable.php(52): Zend\Db\TableGateway\AbstractTableGateway->__get('tableGateway')
+#1 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(220): CmsIr\System\Model\MenuTable->save(Array)
+#2 I:\htdocs\szyk\vendor\cms-ir\cms-ir\src\CmsIr\Dictionary\src\Dictionary\Controller\DictionaryController.php(70): CmsIr\Dictionary\Controller\DictionaryController->createPostCategoryMenuItem('asd')
+#3 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): CmsIr\Dictionary\Controller\DictionaryController->createAction()
+#4 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#9 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 I:\htdocs\szyk\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 I:\htdocs\szyk\public\index.php(17): Zend\Mvc\Application->run()
+#14 {main}

@@ -1,12 +1,23 @@
-<?php /* @var $page \CmsIr\Page\Model\Page */?>
-
-<!-- BEGIN FIRST SECTION -->
-<div class="section">
+<section class="main-content" style="background-image: url(/img/bg-kolekcje.png);">
+    <div class="header">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 red-line"></div>
+    </div>
     <div class="container">
-        <h3><?php echo $page->getName() ?></h3>
-        <h4 class="light-font line-height-28 margin-top-50">
-            <?php echo $page->getContent() ?>
-        </h4>
-    </div><!-- /.container -->
-</div><!-- /.section -->
-<!-- END FIRST SECTION -->
+        <div class="row">
+            <div class="col-sm-12">
+                <?php /* @var $page \CmsIr\Page\Model\Page */ ?>
+                <h2><?php echo $page->getName() ?></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="description-bottom">
+                    <?php echo $page->getContent() ?>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

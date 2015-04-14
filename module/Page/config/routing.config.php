@@ -21,26 +21,53 @@ return array(
             ),
         ),
     ),
-    'save-subscriber' => array(
-        'type' => 'Zend\Mvc\Router\Http\Literal',
+    'viewNews' => array(
+        'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
-            'route'    => '/save-new-subscriber',
+            'route'    => '/aktualnosci/:slug',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
-                'action'     => 'saveSubscriberAjax',
+                'action'     => 'viewNews',
             ),
         ),
     ),
-    'newsletter-confirmation' => array(
-        'type' => 'Segment',
+    'viewContact' => array(
+        'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
-            'route'    => '/newsletter-confirmation/:code',
+            'route'    => '/kontakt',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
-                'action'     => 'confirmationNewsletter',
+                'action'     => 'viewContact',
             ),
-            'constraints' => array(
-                'code' => '[a-zA-Z0-9_-]+'
+        ),
+    ),
+    'viewCollection' => array(
+        'type' => 'Zend\Mvc\Router\Http\Segment',
+        'options' => array(
+            'route'    => '/kolekcja/:slug',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'viewCollection',
+            ),
+        ),
+    ),
+    'oneCollection' => array(
+        'type' => 'Zend\Mvc\Router\Http\Segment',
+        'options' => array(
+            'route'    => '/kolekcja/:slug/:url',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'oneCollection',
+            ),
+        ),
+    ),
+    'contact-form' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/contact-form',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'contactForm',
             ),
         ),
     ),

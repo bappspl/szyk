@@ -1,17 +1,62 @@
-<!-- BEGIN TOP NAVBAR -->
-<div class="top-navbar light-color">
+<header>
     <div class="container">
-        <?php echo $this->partial('partial/layout/header-navbar'); ?>
+        <div class="row">
+            <div class="col-sm-2">
+                <a href="<?php echo $this->url('home') ?>">
+                    <span class="helper"></span><img src="/img/logo.png" alt="logo" class="img-responsive"/>
+                </a>
+            </div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-4 text-right">
+                        Kontakt<br/>
+                        <b><img src="/img/phone.png" alt="phone"/> 32 261 30 16</b>
+                    </div>
+                    <div class="col-sm-4 text-right facebook">
+                        <a href="#" class="pull-right"><img src="/img/facebook.png" alt="facebook"/></a>
+                        <div class="pull-right">
+                            Odwiedź nas<br/>
+                            na Facebooku
+                        </div>
 
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 text-right">
 
-        <?php
-            $ulClass = 'menus';
-            $liClass = 'parent';
-            $subUlClass = 'sub-menus';
-            $subLiClass = 'sub-list';
-        ?>
-        <?php echo $this->menuHelper()->renderMenu($menu, $ulClass, $liClass, $subUlClass, $subLiClass); ?>
+                        <?php echo $this->menuHelper()->renderMenu($menu, 'menuH decor1', null, null, null); ?>
 
-    </div><!-- /.container -->
-</div><!-- /.top-navbar -->
-<!-- END TOP NAVBAR -->
+<!--                        <ul class="menuH decor1">-->
+<!--                            <li>-->
+<!--                                <a href="#">O firmie<span class="arrow-2"></span></a>-->
+<!--                            </li>-->
+<!--                            <li class="active">-->
+<!--                                <a href="#">Kolekcje<span class="arrow"></span></a>-->
+<!--                                <ul>-->
+<!--                                    <li class="active"><a href="#">Gabinet</a></li>-->
+<!--                                    <li><a href="#">Terapeuci</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="#">Salon<span class="arrow"></span></a>-->
+<!--                                <ul>-->
+<!--                                    <li><a href="#">Gabinet</a></li>-->
+<!--                                    <li><a href="#">Terapeuci</a></li>-->
+<!--                                </ul>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="#">Kontakt<span class="arrow-2"></span></a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="#">Szycie na miarę<span class="arrow-2"></span></a>-->
+<!--                            </li>-->
+<!--                            <li>-->
+<!--                                <a href="#">Sklep<span class="arrow-2"></span></a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>

@@ -1,0 +1,54 @@
+<section class="main-content">
+    <div class="header">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 red-line"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Aktualności</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+                <h3 class="title"><?php echo $post->getName() ?></h3>
+                <h3 class="date"><?php echo $post->getDate() ?></h3>
+                <div class="description-bottom">
+
+                   <?php echo $post->getText() ?>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <ul class="news-page">
+
+                    <?php if(!empty($lastPosts)): ?>
+
+                        <?php /* @var $last \CmsIr\Post\Model\Post */ ?>
+                        <?php foreach($lastPosts as $last): ?>
+
+                            <?php $filename = $last->getFilenameMain() ?>
+                            <?php if(!empty($filename)): ?>
+
+                                <li>
+                                    <div class="pull-left"><?php echo $last->getDate() ?> &#9679; <span> <?php echo $last->getName() ?></span></div>
+                                    <div class="pull-right"><a href="<?php echo $this->url('viewNews', array('slug' => $last->getUrl())) ?>">Czytaj więcej &raquo;</a></div>
+                                </li>
+
+                            <?php endif ?>
+
+                        <?php endforeach ?>
+
+                    <?php endif ?>
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>

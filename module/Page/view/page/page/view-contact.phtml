@@ -1,0 +1,118 @@
+<section class="main-content" style="background-image: url(/img/bg-kolekcje.png);">
+    <div class="header">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 red-line"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Kontakt</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.299894320492!2d19.200598!3d50.323656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716da31e5a8b5df%3A0xc34d9abd7c0d4564!2sKr%C3%B3lowej+Jadwigi+44%2C+41-300+D%C4%85browa+G%C3%B3rnicza!5e0!3m2!1spl!2spl!4v1428687845699" width="100%" height="380" frameborder="0" style="border:0"></iframe>
+            </div>
+            <div class="col-sm-8">
+                <h3>Szyk Śląsk. Sklep z modą męską</h3>
+                <div class="row">
+                    <div class="col-sm-5 col-xs-offset-1">
+                        <p><img src="/img/map.png" alt="map" class="footer-ico ico-map"/>Ul. Królowej Jadwigi 44 <br/> 41-300 Dąbrowa Górnicza</p>
+                    </div>
+                    <div class="col-sm-5 col-xs-offset-1">
+                        <p><img src="/img/mail.png" alt="mail" class="footer-ico" /><a href="mailto:szykslask@gmail.com">szykslask@gmail.com</a></p>
+                        <p><img src="/img/phone-footer.png" alt="phone" class="footer-ico" />32 261 30 16</p>
+                    </div>
+                </div>
+                <h3>Formularz kontaktowy</h3>
+
+                <form action="#" id="contact-form">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" name="name" id="name" class="input-form form-name" placeholder="Imię i nazwisko *"  required="required" />
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" name="phone" id="phone" class="input-form form-phone" placeholder="Numer telefonu" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <input type="text" name="email" id="email" class="input-form form-email" placeholder="Adres e-mail *" required="required" />
+                        </div>
+                        <div class="col-sm-6">
+                            <input type="text" name="subject" id="subject" class="input-form form-subject" placeholder="Temat wiadomości" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <textarea name="text" id="text" class="area-form form-text" placeholder="Treść wiadomości *"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <span class="required">*- Pola wymagane</span>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <input type="reset" value="Wyczyść" class="button btn-reset" />
+                                </div>
+                                <div class="col-xs-6">
+                                    <input type="submit" value="Wyślij" class="button btn-submit" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    $(function () {
+        $('.btn-submit').click(function (e) {
+            e.preventDefault();
+
+            var name = $('input[name="name"]').val();
+            var email = $('input[name="email"]').val();
+            var phone = $('input[name="phone"]').val();
+            var subject = $('input[name="subject"]').val();
+            var text = $('#text').val();
+
+            $.ajax({
+                type: "POST",
+                url: "/contact-form",
+                dataType : 'json',
+                data: {
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    subject: subject,
+                    text: text
+                },
+                success: function(json)
+                {
+                    $('input[name="name"]').val('');
+                    $('input[name="email"]').val('');
+                    $('input[name="phone"]').val('');
+                    $('input[name="subject"]').val('');
+                    $('#text').val('');
+                    $('#text').text(json);
+                }
+            });
+        });
+
+        $('.btn-reset').click(function (e) {
+            $('input[name="name"]').val('');
+            $('input[name="email"]').val('');
+            $('input[name="phone"]').val('');
+            $('input[name="subject"]').val('');
+            $('#text').val('');
+            $('#text').text(json);
+        });
+    });
+</script>

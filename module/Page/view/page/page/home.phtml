@@ -1,47 +1,176 @@
-<!-- BEGIN HEADER FULL IMAGE SLIDE -->
-<div class="full-slide-image" id="full-img-slide">
-    <div class="slide-inner">
-        <?php echo $this->partial('partial/page/slider', array('items' => $items)); ?>
-    </div><!-- /.slide-inner -->
-</div><!-- /.full-slide-image -->
-<!-- END HEADER FULL IMAGE SLIDE -->
+<section class="slider">
 
+    <div class="col-sm-12">
+        <div class="gallery">
 
+            <?php /* @var $item \CmsIr\Slider\Model\SliderItem */ ?>
+            <?php foreach($items as $item): ?>
 
-<!-- BEGIN FEATURE SECTION -->
-<div class="section">
+                <div class="gallery-cell">
+                    <img src="<?php echo $this->basePath() ?>/files/slider/<?php echo $item->getFilename() ?>" alt="Slider" class="img-responsive" />
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h2><?php echo $item->getTitle() ?></h2>
+                            </div>
+                            <div class="col-sm-6">
+                                <h1><?php echo $item->getDescription() ?></h1>
+                            </div>
+                            <div class="col-sm-12 check">
+                                <a href="<?php echo $item->getUrl() ?>">Sprawdź</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endforeach ?>
+
+        </div>
+    </div>
+
+</section>
+
+<section class="about">
     <div class="container">
-        <?php echo $this->partial('partial/page/offer'); ?>
-    </div><!-- /.container -->
-</div><!-- /.section -->
-<!-- END FEATURE SECTION -->
+        <div class="row">
+            <h1>O nas</h1>
+            <div class="col-sm-8 text">
 
+                <?php /* @var $page \CmsIr\Page\Model\Page */ ?>
+                <?php if(!empty($page)): ?>
 
+                    <?php echo $page->getContent() ?>
 
-<!-- BEGIN LATEST WORK SECTION -->
-<div class="section work-section">
-    <div class="container">
-        <?php echo $this->partial('partial/page/gallery'); ?>
-    </div><!-- /.container -->
-</div><!-- /.section -->
-<!-- END LATEST WORK SECTION -->
+                <?php endif ?>
 
+            </div>
+            <div class="col-sm-8">
+                <a class="more" href="#">Czytaj więcej <img class="arrows" src="img/arrows.png" alt=""/></a>
+            </div>
+        </div>
+    </div>
+</section>
 
+<?php if(!empty($post)): ?>
 
-<!-- BEGIN HAPPY CLIENT SECTION -->
-<div class="section bg-light">
-    <div class="container">
-        <?php echo $this->partial('partial/page/testimonials'); ?>
-    </div><!-- /.container -->
-</div><!-- /.section -->
-<!-- END HAPPY CLIENT SECTION -->
+    <section class="news">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+                    <?php $filename = $post->getFilenameMain() ?>
 
+                    <?php if(!empty($filename)): ?>
 
+                        <img src="<?php echo $this->basePath() ?>/files/post/<?php echo $post->getFilenameMain() ?>" class="img-responsive" alt="news" />
 
-<!-- BEGIN CLIENT LOGO SECTION -->
-<div class="section">
-    <div class="container">
-        <?php echo $this->partial('partial/page/banners'); ?>
-    </div><!-- /.container -->
-</div><!-- /.section -->
-<!-- END CLIENT LOGO SECTION -->
+                    <?php endif ?>
+
+                </div>
+                <div class="col-sm-8">
+                    <div class="row">
+                        <div class="col-sm-9">
+                            <h3><?php echo $post->getName() ?></h3>
+                        </div>
+                        <div class="col-sm-3 text-right">
+                            <h3><?php echo $post->getDate() ?></h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div>
+                                <?php echo $post->getText() ?>
+                            </div>
+    <!--                        <a class="more" href="--><?php //echo $this->url('aktualnosci', array('slug' => $post->getUrl())) ?><!--">Czytaj więcej <img class="arrows" src="img/arrows.png" alt=""/></a>-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<?php endif ?>
+
+<section class="collection">
+    <div class="col-sm-6">
+        <div class="jm-item-wrapper">
+            <div class="jm-item-image">
+                <img src="img/kolekcja2.png" alt="Pizza Ristorante" />
+                <span class="jm-item-overlay"> </span>
+            </div>
+            <img src="img/big-arrow-left.png" alt="big-arrow" class="big-arrow-left"/>
+            <div class="jm-item-title">
+                <a href="#"><span>Salon <br/> biznes+ślub</span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6">
+        <div class="jm-item-wrapper">
+            <div class="jm-item-image">
+                <img src="img/kolekcja3.png" alt="Pizza Ristorante" />
+                <span class="jm-item-overlay"> </span>
+            </div>
+            <img src="img/big-arrow-right.png" alt="big-arrow" class="big-arrow-right"/>
+            <div class="jm-item-title right-title">
+                <a href="#"><span>Salon <br/> biznes+ślub</span></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="col-sm-12 slider-kolekcje">
+    <div class="gallery js-flickity">
+
+        <?php /* @var $collection \CmsIr\Post\Model\Post */ ?>
+        <?php foreach($collections as $collection): ?>
+
+            <?php $filename = $collection->getFilenameMain() ?>
+            <?php if(!empty($filename)): ?>
+
+                <div class="gallery-cell">
+                    <div class="jm-item-wrapper">
+                        <div class="jm-item-image">
+                            <img src="/thumb/post/1060x500/<?php echo $collection->getFilenameMain() ?>" alt="Pizza Ristorante" />
+                            <span class="jm-item-overlay"> </span>
+                        </div>
+                        <div class="jm-item-title">
+                            <a href="#"><span><?php echo $collection->getName() ?></span></a>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endif ?>
+
+        <?php endforeach ?>
+
+    </div>
+</div>
+
+<section class="map">
+    <div class="col-sm-4">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2547.299894320492!2d19.200598!3d50.323656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4716da31e5a8b5df%3A0xc34d9abd7c0d4564!2sKr%C3%B3lowej+Jadwigi+44%2C+41-300+D%C4%85browa+G%C3%B3rnicza!5e0!3m2!1spl!2spl!4v1428687845699" width="100%" height="500" frameborder="0" style="border:0"></iframe>
+    </div>
+    <div class="col-sm-8">
+        <div class="details">
+            <h3>Szyk Śląsk. Sklep z modą męską</h3>
+            <p><img src="img/map.png" alt="map" class="footer-ico ico-map"/>Ul. Królowej Jadwigi 44 <br/> 41-300 Dąbrowa Górnicza</p>
+            <p><img src="img/mail.png" alt="mail" class="footer-ico" /><a href="mailto:szykslask@gmail.com">szykslask@gmail.com</a></p>
+            <p><img src="img/phone-footer.png" alt="phone" class="footer-ico" />32 261 30 16</p>
+        </div>
+    </div>
+</section>
+
+<script>
+    $(function () {
+        setTimeout(function() {
+            $('.slider .gallery').flickity({
+                // autoPlay: 5000
+            });
+        }, 1000);
+
+        $('.main-gallery').flickity();
+    });
+
+</script>

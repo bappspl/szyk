@@ -1,0 +1,61 @@
+<?php /* @var $dictionary \CmsIr\Dictionary\Model\Dictionary */ ?>
+<?php /* @var $collection \CmsIr\Post\Model\Post */ ?>
+<?php $dictionaryFilename = $dictionary->getFilename() ?>
+<?php if(!empty($dictionaryFilename)): ?>
+    <section class="main-content" style="background-image: url(<?php echo $this->basePath() ?>/files/dictionary/<?php echo $dictionaryFilename ?>);">
+<?php else: ?>
+    <section class="main-content" style="background-image: url(/img/bg-kolekcje.png);">
+<?php endif ?>
+    <div class="header">
+        <div class="col-sm-6"></div>
+        <div class="col-sm-6 red-line"></div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2><a href="#"><?php echo $dictionary->getName() ?></a> <span>/</span> <?php echo $collection->getName() ?></h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12">
+                <?php $filename = $collection->getFilenameMain() ?>
+                <?php if(!empty($filename)): ?>
+                    <img src="<?php echo $this->basePath() ?>/files/post/<?php echo $collection->getFilenameMain() ?>" alt="kolekcja" class="img-responsive" />
+                <?php endif ?>
+                <div class="description-bottom">
+                    <?php echo $collection->getText() ?>
+                </div>
+            </div>
+        </div>
+
+        <?php if(!empty($files)): ?>
+
+            <div class="gallery">
+
+                <?php $gallery = array_chunk($files, 3) ?>
+
+                <?php foreach($gallery as $gal): ?>
+
+                    <div class="row">
+
+                        <?php foreach($gal as $g): ?>
+
+                            <div class="col-sm-4">
+                                <a class="fancybox" rel="gallery1" href="<?php echo $this->basepath() ?>/files/post/<?php echo $g->getFilename() ?>">
+                                    <img class="img-responsive gallery-img" src="<?php echo $this->basepath() ?>/files/post/<?php echo $g->getFilename() ?>" alt=""/>
+                                </a>
+                            </div>
+
+                        <?php endforeach ?>
+
+                    </div>
+
+                <?php endforeach ?>
+
+            </div>
+
+        <?php endif ?>
+
+    </div>
+</section>
