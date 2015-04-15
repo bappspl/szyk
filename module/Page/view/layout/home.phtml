@@ -16,11 +16,13 @@
                         ->appendStylesheet($this->basePath() . '/css/flickity.css')
                         ->appendStylesheet($this->basePath() . '/css/front-style.css')
                         ->appendStylesheet($this->basePath() . '/css/media_queries.css')
+                        ->appendStylesheet($this->basePath() . '/css/jquery.fancybox.css')
         ?>
 
         <?php echo $this->headScript()
             ->appendFile($this->basePath() . '/js/jquery.min.js')
             ->appendFile($this->basePath() . '/js/flickity.pkgd.min.js')
+            ->appendFile($this->basePath() . '/js/jquery.fancybox.js')
         ?>
 
         <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,700&subset=latin,cyrillic-ext,greek-ext,greek,vietnamese,latin-ext,cyrillic' rel='stylesheet' type='text/css'>

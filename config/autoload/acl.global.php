@@ -49,7 +49,7 @@ return array(
                 ),
                 'CmsIr\System\Controller\System' => array(
                     'createThumb'	=> 'guest',
-                    'saveEditorImages'	=> 'superadmin',
+                    'saveEditorImages'	=> 'guest',
                 ),
             )
         )

@@ -19,10 +19,10 @@
 
         <div class="row">
             <div class="col-sm-12">
-                <?php $filename = $collection->getFilenameMain() ?>
-                <?php if(!empty($filename)): ?>
-                    <img src="<?php echo $this->basePath() ?>/files/post/<?php echo $collection->getFilenameMain() ?>" alt="kolekcja" class="img-responsive" />
-                <?php endif ?>
+<!--                --><?php //$filename = $collection->getFilenameMain() ?>
+<!--                --><?php //if(!empty($filename)): ?>
+<!--                    <img src="--><?php //echo $this->basePath() ?><!--/files/post/--><?php //echo $collection->getFilenameMain() ?><!--" alt="kolekcja" class="img-responsive" />-->
+<!--                --><?php //endif ?>
                 <div class="description-bottom">
                     <?php echo $collection->getText() ?>
                 </div>
@@ -59,3 +59,12 @@
 
     </div>
 </section>
+
+<script>
+    $(function () {
+        $(".fancybox").fancybox({
+            openEffect	: 'none',
+            closeEffect	: 'none'
+        });
+    });
+</script>

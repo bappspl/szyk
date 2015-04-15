@@ -39,13 +39,16 @@
                 <?php /* @var $page \CmsIr\Page\Model\Page */ ?>
                 <?php if(!empty($page)): ?>
 
-                    <?php echo $page->getContent() ?>
+                    <?php $content = $page->getContent() ?>
+                    <?php $pos = strpos($content, '—'); ?>
+
+                    <?php echo substr($content, 0 ,$pos) ?>
 
                 <?php endif ?>
 
             </div>
             <div class="col-sm-8">
-                <a class="more" href="#">Czytaj więcej <img class="arrows" src="img/arrows.png" alt=""/></a>
+                <a class="more" href="<?php echo $this->url('viewPage', array('slug' => $page->getSlug())) ?>">Czytaj więcej <img class="arrows" src="img/arrows.png" alt=""/></a>
             </div>
         </div>
     </div>
