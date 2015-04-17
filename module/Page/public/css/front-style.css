@@ -125,7 +125,7 @@ ul.menuH a:hover, ul.menuH li.active a {
 
 ul.menuH ul
 {
-    width:200px;
+    width:300px;
     position: absolute;
     left: -9999px;
     border-top: 0;
@@ -584,7 +584,7 @@ footer p a:hover, footer a:hover {
 }
 footer .col-sm-5 .col-sm-4 {
     display: block;
-    height: 120px;
+    /*height: 120px;*/
 }
 footer .col-sm-5 .col-sm-4 ul {
     list-style: none;
@@ -671,7 +671,7 @@ footer .col-sm-7 p {
     float: left;
 }
 .inner-border:hover {
-    border: 10px solid #fff;
+    border: 9px solid #fff;
 }
 .inner-border:hover img {
     margin: -5px 0;
@@ -824,4 +824,9 @@ footer .col-sm-7 p {
 }
 #contact-form {
     margin-bottom: 20px;
+}
+
+.description-bottom img {
+    width: 100% !important;
+    height: auto;
 }
