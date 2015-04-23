@@ -82,9 +82,11 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div>
-                                <?php echo $post->getText() ?>
+                                <?php $text = $post->getText() ?>
+                                <?php $position = strpos($text, '</p>') ?>
+                                <?php echo substr($text, 0 , $position) ?>
                             </div>
-    <!--                        <a class="more" href="--><?php //echo $this->url('aktualnosci', array('slug' => $post->getUrl())) ?><!--">Czytaj więcej <img class="arrows" src="img/arrows.png" alt=""/></a>-->
+                            <a class="more" href="<?php echo $this->url('viewNews', array('slug' => $post->getUrl())) ?>">Czytaj więcej <img class="arrows" src="img/arrows.png" alt=""/></a>
                         </div>
                     </div>
 
@@ -104,7 +106,7 @@
             </div>
             <img src="img/big-arrow-left.png" alt="big-arrow" class="big-arrow-left"/>
             <div class="jm-item-title">
-                <a href="#"><span>Salon <br/> biznes+ślub</span></a>
+                <a href="<?php echo $this->url('oneCollection', array('slug' => 'salon', 'url' => 'salon-biznes-slub')) ?>"><span>Salon <br/> biznes+ślub</span></a>
             </div>
         </div>
     </div>
@@ -117,7 +119,7 @@
             </div>
             <img src="img/big-arrow-right.png" alt="big-arrow" class="big-arrow-right"/>
             <div class="jm-item-title right-title">
-                <a href="#"><span>Salon <br/> biznes+ślub</span></a>
+                <a href="<?php echo $this->url('oneCollection', array('slug' => 'salon', 'url' => 'salon-casual')) ?>"><span>Salon <br/> casual</span></a>
             </div>
         </div>
     </div>
@@ -139,7 +141,7 @@
                             <span class="jm-item-overlay"> </span>
                         </div>
                         <div class="jm-item-title">
-                            <a href="#"><span><?php echo $collection->getName() ?></span></a>
+                            <a href="<?php echo $this->url('oneCollection', array('slug' => $collection->getCategory(), 'url' => $collection->getUrl())) ?>"><span><?php echo $collection->getName() ?></span></a>
                         </div>
                     </div>
                 </div>
@@ -169,7 +171,7 @@
     $(function () {
         setTimeout(function() {
             $('.slider .gallery').flickity({
-                // autoPlay: 5000
+                autoPlay: 3000
             });
         }, 1000);
 
